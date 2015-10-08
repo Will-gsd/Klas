@@ -1,0 +1,20 @@
+<apex:page standardController="Account" showHeader="true" tabStyle="account">
+  <apex:form >
+<!--    < apex:sectionHeader subtitle="{!account.name}" title="Account"/> -->
+<!--   < apex:pageBlock mode="maindetail" title="Account Edit" -->
+<!--  /apex:pageBlock -->
+<!--    < chatter:feedWithFollowers entityId="{!account.id}" /> -->
+      <apex:detail showChatter="true" inlineEdit="true" />
+
+
+
+    <!-- Begin Default Content REMOVE THIS -->
+<!--    <h1>KTAC Report</h1>
+    Hello {!$User.FirstName}! Welcome to this uber KTAC report page.  This is a report that shows red rows where equipment has expired KTACs sorted by customer
+    <p>You are viewing the {!account.name} account.</p> -->
+    <!-- End Default Content REMOVE THIS -->
+
+
+
+  </apex:form>
+</apex:page>

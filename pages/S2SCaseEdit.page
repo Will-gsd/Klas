@@ -1,0 +1,27 @@
+<apex:page showHeader="false" sidebar="false" standardController="Case" extensions="S2SAssignExternalController">    
+    <apex:pageMessages />
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Assign External User" action="{!saveRecord}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" onclick="window.top.close();"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection columns="1" title="User search">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Search user by name: "/>
+                    <apex:inputText value="{!nameSearch}" >
+                        <apex:actionSupport event="onkeyup" reRender="userList"/>
+                    </apex:inputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Users: "/>
+                    <apex:outputPanel id="userList">
+                        <apex:selectList value="{!selectedUser}" size="1">
+                            <apex:selectOptions value="{!externalUsers}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
